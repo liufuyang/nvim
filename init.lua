@@ -44,6 +44,8 @@ P.S. You can delete this when you're done too. It's your config now :)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+vim.o.background = "dark" -- or "light" for light mode
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
@@ -191,10 +193,11 @@ require('lazy').setup({
 
   {
     -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
+    -- 'navarasu/onedark.nvim',
+    'ellisonleao/gruvbox.nvim',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      vim.cmd.colorscheme 'gruvbox'
     end,
   },
 
@@ -624,6 +627,7 @@ cmp.setup {
     end,
   },
   completion = {
+    autocomplete = false,
     completeopt = 'menu,menuone,noinsert',
   },
   mapping = cmp.mapping.preset.insert {
